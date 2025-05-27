@@ -1,7 +1,7 @@
 from typing import List, Tuple
 import numpy as np
 
-from config import BOUNDS, X, Y
+from config import BOUNDS, X, Z
 
 
 def binary_to_real(binary_str: List[int], bounds: Tuple[float, float], bits_per_dim: int) -> List[float]:
@@ -42,5 +42,5 @@ def ackley(x: List[float]) -> float:
 
 
 def fitness_function(chromosome: List[int]) -> float:
-    real_values = binary_to_real(chromosome, BOUNDS, X * Y)
+    real_values = binary_to_real(chromosome, BOUNDS, X * Z)
     return sphere(real_values) ** 2 * ackley(real_values)
