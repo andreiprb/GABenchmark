@@ -89,7 +89,7 @@ def grid_search():
               f"{operator_names['mutation'][mut_id]}")
 
         trial_results = []
-        for trial in range(10):
+        for trial in range(NUM_SIMULATIONS):
             result = run_ga(sel_id, cross_id, mut_id)
             trial_results.append(result.best_fitness)
             print(f"  Trial {trial + 1}: {result.best_fitness:.6f}")
